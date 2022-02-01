@@ -1,7 +1,7 @@
 from rest_framework import status
 import datetime
 
-from config.helpers import error_response
+from config.helpers.error_response import error_response
 from .models import User
 
 # Add this mixin to the login-required classes.
@@ -21,4 +21,3 @@ class CustomLoginRequiredMixin():
 
         request.login_user = login_user[0]
         return super().dispatch(request, *args, **kwargs)
-        

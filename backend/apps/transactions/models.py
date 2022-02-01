@@ -1,6 +1,6 @@
-from apps.users.models import User
 from django.db import models
-from apps.category.models import Category
+from apps.users.models import User
+from apps.categories.models import Category
 from config.constants import *
 from django.core.validators import MinValueValidator
 
@@ -23,7 +23,7 @@ class Transaction(models.Model):
     amount = models.IntegerField(
         'Amount', blank=False, null=False, validators=[
             MinValueValidator(1)
-        ]
+        ] 
     )
     date = models.DateField(
         'Date', blank=False, null=False
